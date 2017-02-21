@@ -7,5 +7,8 @@ namespace ProjectCMC_Web.Models
 {
     public class Trend
     {
+        public int TrendID { get; set; }
+        public double
+
     }
 }
