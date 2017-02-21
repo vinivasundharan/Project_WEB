@@ -22,10 +22,11 @@ namespace ProjectCMC_Web.Models
         public string ManufacturerName { get; set; }
         public int WindParkID { get; set; }
         public WindPark Windpark { get; set; }
-        //sdgsdgdgdgb nmghm ffbgjm  fghf dfgdh
         public int LocationID { get; set; }
         public Location Location { get; set; }
+        //Foriegn Key for Node
+        public List<Node> Node { get; set; }
 
-         
+
     }
 }
