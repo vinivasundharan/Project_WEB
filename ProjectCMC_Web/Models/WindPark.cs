@@ -21,5 +21,6 @@ namespace ProjectCMC_Web.Models
         public string ModifiedBy { get; set; }
 
         public List<WindMill> WindMills { get; set; }
+        
     }
 }
