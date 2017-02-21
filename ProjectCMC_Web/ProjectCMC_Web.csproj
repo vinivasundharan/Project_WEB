@@ -165,7 +165,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ConnectionsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LocationsController.cs" />
+    <Compile Include="Controllers\WindMillsController.cs" />
+    <Compile Include="Controllers\WindParksController.cs" />
     <Compile Include="DAL\ProjectContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -216,6 +220,26 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\WindParks\Create.cshtml" />
+    <Content Include="Views\WindParks\Delete.cshtml" />
+    <Content Include="Views\WindParks\Details.cshtml" />
+    <Content Include="Views\WindParks\Edit.cshtml" />
+    <Content Include="Views\WindParks\Index.cshtml" />
+    <Content Include="Views\WindMills\Create.cshtml" />
+    <Content Include="Views\WindMills\Delete.cshtml" />
+    <Content Include="Views\WindMills\Details.cshtml" />
+    <Content Include="Views\WindMills\Edit.cshtml" />
+    <Content Include="Views\WindMills\Index.cshtml" />
+    <Content Include="Views\Locations\Create.cshtml" />
+    <Content Include="Views\Locations\Delete.cshtml" />
+    <Content Include="Views\Locations\Details.cshtml" />
+    <Content Include="Views\Locations\Edit.cshtml" />
+    <Content Include="Views\Locations\Index.cshtml" />
+    <Content Include="Views\Connections\Create.cshtml" />
+    <Content Include="Views\Connections\Delete.cshtml" />
+    <Content Include="Views\Connections\Details.cshtml" />
+    <Content Include="Views\Connections\Edit.cshtml" />
+    <Content Include="Views\Connections\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

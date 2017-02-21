@@ -2,10 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Data.Entity.ModelConfiguration.Conventions;
+using System.Data.Entity;
+using ProjectCMC_Web.Models;
 
 namespace ProjectCMC_Web.DAL
 {
-    public class ProjectContext
+    public class ProjectContext : DbContext
     {
+        public ProjectContext(): base("ProjectContext")
+        {
+            Database.SetInitializer<ProjectContext>(null);
+        }
+        public DbSet<Connection> Connection { get; set; }
+        public DbSet<Location> Location { get; set; }
+        public DbSet<Node> Node { get; set; }
+        public DbSet<Trend> Trend { get; set; }
+        public DbSet<WindMill> WindMill { get; set; }
+        public DbSet<WindPark> WindPark { get; set; }
+       
     }
 }

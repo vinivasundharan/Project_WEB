@@ -21,7 +21,7 @@ namespace ProjectCMC_Web.Models
         [Display(Name = "Manufacturer Name")]
         public string ManufacturerName { get; set; }
         public int WindParkID { get; set; }
-        public WindPark Windpark { get; set; }
+        public WindPark WindPark { get; set; }
         public int LocationID { get; set; }
         public Location Location { get; set; }
         //Foriegn Key for Node
