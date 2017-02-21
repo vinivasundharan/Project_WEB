@@ -169,6 +169,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Node.cs" />
     <Compile Include="Models\WindMill.cs" />
     <Compile Include="Models\WindPark.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
