@@ -1,0 +1,50 @@
+﻿@model ProjectCMC_Web.Models.Connection
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Connection</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.StartTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastIP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastIP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConnectionStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConnectionStatus)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ConnectionID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
