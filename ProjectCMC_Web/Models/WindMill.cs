@@ -21,7 +21,6 @@ namespace ProjectCMC_Web.Models
 
         public int WindParkID { get; set; }
         public WindPark Windpark { get; set; }
-        //sdgsdgdgdgb nmghm ffbgjm  fghf dfgdh
          
     }
 }
