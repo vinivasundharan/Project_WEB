@@ -171,6 +171,8 @@
     </Compile>
     <Compile Include="Models\Connection.cs" />
     <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\Node.cs" />
+    <Compile Include="Models\Trend.cs" />
     <Compile Include="Models\WindMill.cs" />
     <Compile Include="Models\WindPark.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
