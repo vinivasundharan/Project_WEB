@@ -24,7 +24,9 @@ namespace ProjectCMC_Web.Models
         public WindPark Windpark { get; set; }
         public int LocationID { get; set; }
         public Location Location { get; set; }
+        //Foriegn Key for Node
+        public List<Node> Node { get; set; }
 
-         
+
     }
 }
