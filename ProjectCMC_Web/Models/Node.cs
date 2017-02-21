@@ -24,6 +24,7 @@ namespace ProjectCMC_Web.Models
 
         public int WindMillID { get; set; }
         public WindMill WindMill { get; set; }
-        // 23456456
+        
+
     }
 }
