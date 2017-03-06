@@ -12,7 +12,7 @@ namespace ProjectCMC_Web.Models
         [Display(Name = "Node Name")]
         public string NodeName { get; set; }
         [Display(Name = "Node Description")]
-        public DateTime NodeDescription { get; set; }
+        public String NodeDescription { get; set; }
         [Display(Name = "Created On")]
         public DateTime CreatedOn { get; set; }
         [Display(Name = "Modified On")]

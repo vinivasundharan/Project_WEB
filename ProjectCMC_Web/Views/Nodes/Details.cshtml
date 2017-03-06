@@ -1,4 +1,4 @@
-﻿@model ProjectCMC_Web.Models.WindMill
+﻿@model ProjectCMC_Web.Models.Node
 
 @{
     ViewBag.Title = "Details";
@@ -7,23 +7,31 @@
 <h2>Details</h2>
 
 <div>
-    <h4>WindMill</h4>
+    <h4>Node</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.WindPark.WindParkName)
+            @Html.DisplayNameFor(model => model.WindMill.WindMillName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.WindPark.WindParkName)
+            @Html.DisplayFor(model => model.WindMill.WindMillName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.WindMillName)
+            @Html.DisplayNameFor(model => model.NodeName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.WindMillName)
+            @Html.DisplayFor(model => model.NodeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NodeDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NodeDescription)
         </dd>
 
         <dt>
@@ -58,33 +66,9 @@
             @Html.DisplayFor(model => model.ModifiedBy)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ManufacturerName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ManufacturerName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Latitude)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Latitude)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Longtitude)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Longtitude)
-        </dd>
-
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.WindMillID }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.NodeID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

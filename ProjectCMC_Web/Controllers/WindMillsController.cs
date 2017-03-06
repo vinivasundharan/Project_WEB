@@ -18,7 +18,7 @@ namespace ProjectCMC_Web.Controllers
         // GET: WindMills
         public ActionResult Index()
         {
-            var windMill = db.WindMill.Include(w => w.Location).Include(w => w.WindPark);
+            var windMill = db.WindMill.Include(w => w.WindPark);
             return View(windMill.ToList());
         }
 
@@ -40,8 +40,7 @@ namespace ProjectCMC_Web.Controllers
         // GET: WindMills/Create
         public ActionResult Create()
         {
-            ViewBag.LocationID = new SelectList(db.Location, "LocationID", "Latitude");
-            ViewBag.WindParkID = new SelectList(db.WindPark, "WindParkID", "WindParkName");
+           ViewBag.WindParkID = new SelectList(db.WindPark, "WindParkID", "WindParkName");
             return View();
         }
 
@@ -50,16 +49,19 @@ namespace ProjectCMC_Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "WindMillID,WindMillName,CreatedOn,ModifiedOn,CreatedBy,ModifiedBy,ManufacturerName,WindParkID,LocationID")] WindMill windMill)
+        public ActionResult Create([Bind(Include = "WindMillID,WindMillName,CreatedOn,ModifiedOn,CreatedBy,ModifiedBy,ManufacturerName,Latitude,Longtitude,WindParkID")] WindMill windMill)
         {
             if (ModelState.IsValid)
             {
+                windMill.CreatedBy = User.Identity.Name;
+                windMill.CreatedOn = DateTime.Now;
+                windMill.ModifiedOn = DateTime.Now;
+                windMill.ModifiedBy = User.Identity.Name;
                 db.WindMill.Add(windMill);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.LocationID = new SelectList(db.Location, "LocationID", "Latitude", windMill.LocationID);
             ViewBag.WindParkID = new SelectList(db.WindPark, "WindParkID", "WindParkName", windMill.WindParkID);
             return View(windMill);
         }
@@ -76,7 +78,6 @@ namespace ProjectCMC_Web.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.LocationID = new SelectList(db.Location, "LocationID", "Latitude", windMill.LocationID);
             ViewBag.WindParkID = new SelectList(db.WindPark, "WindParkID", "WindParkName", windMill.WindParkID);
             return View(windMill);
         }
@@ -86,7 +87,7 @@ namespace ProjectCMC_Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "WindMillID,WindMillName,CreatedOn,ModifiedOn,CreatedBy,ModifiedBy,ManufacturerName,WindParkID,LocationID")] WindMill windMill)
+        public ActionResult Edit([Bind(Include = "WindMillID,WindMillName,CreatedOn,ModifiedOn,CreatedBy,ModifiedBy,ManufacturerName,Latitude,Longtitude,WindParkID")] WindMill windMill)
         {
             if (ModelState.IsValid)
             {
@@ -94,7 +95,6 @@ namespace ProjectCMC_Web.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.LocationID = new SelectList(db.Location, "LocationID", "Latitude", windMill.LocationID);
             ViewBag.WindParkID = new SelectList(db.WindPark, "WindParkID", "WindParkName", windMill.WindParkID);
             return View(windMill);
         }

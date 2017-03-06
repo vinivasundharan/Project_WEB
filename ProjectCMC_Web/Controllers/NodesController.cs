@@ -11,111 +11,116 @@ using ProjectCMC_Web.Models;
 
 namespace ProjectCMC_Web.Controllers
 {
-    public class WindParksController : Controller
+    public class NodesController : Controller
     {
         private ProjectContext db = new ProjectContext();
 
-        // GET: WindParks
+        // GET: Nodes
         public ActionResult Index()
         {
-            return View(db.WindPark.ToList());
+            var node = db.Node.Include(n => n.WindMill);
+            return View(node.ToList());
         }
 
-        // GET: WindParks/Details/5
+        // GET: Nodes/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            WindPark windPark = db.WindPark.Find(id);
-            if (windPark == null)
+            Node node = db.Node.Find(id);
+            if (node == null)
             {
                 return HttpNotFound();
             }
-            return View(windPark);
+            return View(node);
         }
 
-        // GET: WindParks/Create
+        // GET: Nodes/Create
         public ActionResult Create()
         {
+            ViewBag.WindMillID = new SelectList(db.WindMill, "WindMillID", "WindMillName");
             return View();
         }
 
-        // POST: WindParks/Create
+        // POST: Nodes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "WindParkID,WindParkName,CreatedOn,ModifiedOn,CreatedBy,ModifiedBy")] WindPark windPark)
+        public ActionResult Create([Bind(Include = "NodeID,NodeName,NodeDescription,CreatedOn,ModifiedOn,CreatedBy,ModifiedBy,WindMillID")] Node node)
         {
             if (ModelState.IsValid)
             {
-                windPark.CreatedBy = User.Identity.Name;
-                windPark.CreatedOn = DateTime.Now;
-                windPark.ModifiedBy = User.Identity.Name;
-                windPark.ModifiedOn = DateTime.Now;
-                db.WindPark.Add(windPark);
+                node.CreatedBy = User.Identity.Name;
+                node.CreatedOn = DateTime.Now;
+                node.ModifiedBy = User.Identity.Name;
+                node.ModifiedOn = DateTime.Now;
+                db.Node.Add(node);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(windPark);
+            ViewBag.WindMillID = new SelectList(db.WindMill, "WindMillID", "WindMillName", node.WindMillID);
+            return View(node);
         }
 
-        // GET: WindParks/Edit/5
+        // GET: Nodes/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            WindPark windPark = db.WindPark.Find(id);
-            if (windPark == null)
+            Node node = db.Node.Find(id);
+            if (node == null)
             {
                 return HttpNotFound();
             }
-            return View(windPark);
+            ViewBag.WindMillID = new SelectList(db.WindMill, "WindMillID", "WindMillName", node.WindMillID);
+            return View(node);
         }
 
-        // POST: WindParks/Edit/5
+        // POST: Nodes/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "WindParkID,WindParkName,CreatedOn,ModifiedOn,CreatedBy,ModifiedBy")] WindPark windPark)
+        public ActionResult Edit([Bind(Include = "NodeID,NodeName,NodeDescription,CreatedOn,ModifiedOn,CreatedBy,ModifiedBy,WindMillID")] Node node)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(windPark).State = EntityState.Modified;
+                db.Entry(node).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(windPark);
+            ViewBag.WindMillID = new SelectList(db.WindMill, "WindMillID", "WindMillName", node.WindMillID);
+            return View(node);
         }
 
-        // GET: WindParks/Delete/5
+        // GET: Nodes/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            WindPark windPark = db.WindPark.Find(id);
-            if (windPark == null)
+            Node node = db.Node.Find(id);
+            if (node == null)
             {
                 return HttpNotFound();
             }
-            return View(windPark);
+            return View(node);
         }
 
-        // POST: WindParks/Delete/5
+        // POST: Nodes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            WindPark windPark = db.WindPark.Find(id);
-            db.WindPark.Remove(windPark);
+            Node node = db.Node.Find(id);
+            db.Node.Remove(node);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
