@@ -47,6 +47,7 @@
             @Html.DisplayFor(modelItem => item.ModifiedBy)
         </td>
         <td>
+            @Html.ActionLink("View wind mills", "ViewWindMills", new { id = item.WindParkID }) |
             @Html.ActionLink("Edit", "Edit", new { id=item.WindParkID }) |
             @Html.ActionLink("Details", "Details", new { id=item.WindParkID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.WindParkID })

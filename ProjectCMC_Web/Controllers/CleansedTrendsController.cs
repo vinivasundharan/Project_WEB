@@ -11,119 +11,107 @@ using ProjectCMC_Web.Models;
 
 namespace ProjectCMC_Web.Controllers
 {
-    public class WindParksController : Controller
+    public class CleansedTrendsController : Controller
     {
         private ProjectContext db = new ProjectContext();
 
-        // GET: WindParks
+        // GET: CleansedTrends
         public ActionResult Index()
         {
-            return View(db.WindPark.ToList());
+            return View(db.CleansedTrend.ToList());
         }
 
-        // GET: WindParks/Details/5
+        // GET: CleansedTrends/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            WindPark windPark = db.WindPark.Find(id);
-            if (windPark == null)
+            CleansedTrend cleansedTrend = db.CleansedTrend.Find(id);
+            if (cleansedTrend == null)
             {
                 return HttpNotFound();
             }
-            return View(windPark);
+            return View(cleansedTrend);
         }
 
-        
-
-        // GET: WindParks/Create
+        // GET: CleansedTrends/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: WindParks/Create
+        // POST: CleansedTrends/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "WindParkID,WindParkName,CreatedOn,ModifiedOn,CreatedBy,ModifiedBy")] WindPark windPark)
+        public ActionResult Create([Bind(Include = "CleansedTrendID,ReadingTime,F1Amp,F2Amp,F3Amp,F4Amp,F5Amp,F1Phase,F2Phase,F3Phase,F4Phase,F5Phase,F1HA,F2HA,F3HA,F4HA,F5HA,F1HW,F2HW,F3HW,F4HW,F5HW,F1Status,F2Status,F3Status,F4Status,F5Status")] CleansedTrend cleansedTrend)
         {
             if (ModelState.IsValid)
             {
-                windPark.CreatedBy = User.Identity.Name;
-                windPark.CreatedOn = DateTime.Now;
-                windPark.ModifiedBy = User.Identity.Name;
-                windPark.ModifiedOn = DateTime.Now;
-                db.WindPark.Add(windPark);
+                db.CleansedTrend.Add(cleansedTrend);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(windPark);
+            return View(cleansedTrend);
         }
 
-        public ActionResult ViewWindMills(int id)
-        {
-            var WindMill = db.WindMill.Where(x => x.WindParkID == id).ToList();
-            return View(WindMill);
-        }
-
-        // GET: WindParks/Edit/5
+        // GET: CleansedTrends/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            WindPark windPark = db.WindPark.Find(id);
-            if (windPark == null)
+            CleansedTrend cleansedTrend = db.CleansedTrend.Find(id);
+            if (cleansedTrend == null)
             {
                 return HttpNotFound();
             }
-            return View(windPark);
+            return View(cleansedTrend);
         }
 
-        // POST: WindParks/Edit/5
+        // POST: CleansedTrends/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "WindParkID,WindParkName,CreatedOn,ModifiedOn,CreatedBy,ModifiedBy")] WindPark windPark)
+        public ActionResult Edit([Bind(Include = "CleansedTrendID,ReadingTime,F1Amp,F2Amp,F3Amp,F4Amp,F5Amp,F1Phase,F2Phase,F3Phase,F4Phase,F5Phase,F1HA,F2HA,F3HA,F4HA,F5HA,F1HW,F2HW,F3HW,F4HW,F5HW,F1Status,F2Status,F3Status,F4Status,F5Status")] CleansedTrend cleansedTrend)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(windPark).State = EntityState.Modified;
+                db.Entry(cleansedTrend).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(windPark);
+            return View(cleansedTrend);
         }
 
-        // GET: WindParks/Delete/5
+        // GET: CleansedTrends/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            WindPark windPark = db.WindPark.Find(id);
-            if (windPark == null)
+            CleansedTrend cleansedTrend = db.CleansedTrend.Find(id);
+            if (cleansedTrend == null)
             {
                 return HttpNotFound();
             }
-            return View(windPark);
+            return View(cleansedTrend);
         }
 
-        // POST: WindParks/Delete/5
+        // POST: CleansedTrends/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            WindPark windPark = db.WindPark.Find(id);
-            db.WindPark.Remove(windPark);
+            CleansedTrend cleansedTrend = db.CleansedTrend.Find(id);
+            db.CleansedTrend.Remove(cleansedTrend);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
