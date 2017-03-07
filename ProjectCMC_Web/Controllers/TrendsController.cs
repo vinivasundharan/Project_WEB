@@ -96,7 +96,46 @@ namespace ProjectCMC_Web.Controllers
 
                     DataTable dt = result.Tables[0];
                     bool flag = true;
+                    foreach(DataRow dr in dt.Rows.Cast<DataRow>().Skip(1))
+                    {
+                        Trend t = new Trend { NodeID=1,
+                        ReadingTime=Convert.ToDateTime(dr[0]),
+                        F1Amp=Convert.ToDouble(dr[1]),
+                            F1Phase  = Convert.ToInt32(dr[2]),
+                        F1HA = Convert.ToDouble(dr[3]),
+                        F1HW = Convert.ToDouble(dr[4]),
+                        F1Status= Convert.ToInt32(dr[5]),
+                            F2Amp = Convert.ToDouble(dr[6]),
+                            F2Phase = Convert.ToInt32(dr[7]),
+                            F2HA = Convert.ToDouble(dr[8]),
+                            F2HW = Convert.ToDouble(dr[9]),
+                            F2Status = Convert.ToInt32(dr[10]),
+                            F3Amp = Convert.ToDouble(dr[11]),
+                            F3Phase = Convert.ToInt32(dr[12]),
+                            F3HA = Convert.ToDouble(dr[13]),
+                            F3HW = Convert.ToDouble(dr[14]),
+                            F3Status = Convert.ToInt32(dr[15]),
+                            F4Amp = Convert.ToDouble(dr[16]),
+                            F4Phase = Convert.ToInt32(dr[17]),
+                            F4HA = Convert.ToDouble(dr[18]),
+                            F4HW = Convert.ToDouble(dr[19]),
+                            F4Status = Convert.ToInt32(dr[20]),
+                            F5Amp = Convert.ToDouble(dr[21]),
+                            F5Phase = Convert.ToInt32(dr[22]),
+                            F5HA = Convert.ToDouble(dr[23]),
+                            F5HW = Convert.ToDouble(dr[24]),
+                            F5Status = Convert.ToInt32(dr[25]),
+                            Speed=Convert.ToDouble(dr[26]),
+                            Process=Convert.ToDouble(dr[27]),
+                            Digital = Convert.ToInt32(dr[28]),
+                            StorageReason =Convert.ToInt32(dr[29]),
+                            BOV=Convert.ToDouble(dr[30])
+                        };
+                        db.Trend.Add(t);
 
+                        
+                    }
+                    db.SaveChanges();
                 }
                 
             }
