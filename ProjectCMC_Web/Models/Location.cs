@@ -10,6 +10,7 @@ namespace ProjectCMC_Web.Models
         public int LocationID { get; set; }
         public string Latitude { get; set; }
         public string Longitude { get; set; }
+       
 
     }
 }

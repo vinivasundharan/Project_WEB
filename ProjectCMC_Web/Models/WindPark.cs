@@ -20,7 +20,8 @@ namespace ProjectCMC_Web.Models
         [Display(Name = "Modified By")]
         public string ModifiedBy { get; set; }
 
-        public List<WindMill> WindMills { get; set; }
-        
+        public virtual List<WindMill> WindMills { get; set; }
+        public virtual Location Location { get; set; }
+
     }
 }

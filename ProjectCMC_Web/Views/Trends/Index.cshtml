@@ -1,0 +1,219 @@
+﻿@model IEnumerable<ProjectCMC_Web.Models.Trend>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Node.NodeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReadingTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.F1Amp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.F2Amp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.F3Amp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.F4Amp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.F5Amp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.F1Phase)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.F2Phase)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.F3Phase)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.F4Phase)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.F5Phase)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.F1HA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.F2HA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.F3HA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.F4HA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.F5HA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.F1HW)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.F2HW)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.F3HW)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.F4HW)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.F5HW)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.F1Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.F2Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.F3Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.F4Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.F5Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Speed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Process)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Digital)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StorageReason)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BOV)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Node.NodeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReadingTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.F1Amp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.F2Amp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.F3Amp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.F4Amp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.F5Amp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.F1Phase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.F2Phase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.F3Phase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.F4Phase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.F5Phase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.F1HA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.F2HA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.F3HA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.F4HA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.F5HA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.F1HW)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.F2HW)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.F3HW)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.F4HW)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.F5HW)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.F1Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.F2Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.F3Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.F4Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.F5Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Speed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Process)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Digital)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StorageReason)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BOV)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TrendID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TrendID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TrendID })
+        </td>
+    </tr>
+}
+
+</table>
