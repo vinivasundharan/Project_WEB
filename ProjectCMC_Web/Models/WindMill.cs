@@ -8,7 +8,7 @@ namespace ProjectCMC_Web.Models
     public class WindMill
     {
         public int WindMillID { get; set; }
-        [Display(Name = "Wind Park Name")]
+        [Display(Name = "Wind Mill Name")]
         public string WindMillName { get; set; }
         [Display(Name = "Created On")]
         public DateTime CreatedOn { get; set; }
@@ -20,13 +20,14 @@ namespace ProjectCMC_Web.Models
         public string ModifiedBy { get; set; }
         [Display(Name = "Manufacturer Name")]
         public string ManufacturerName { get; set; }
+        public string Latitude { get; set; }
+        public string Longtitude { get; set; }
         public int WindParkID { get; set; }
         public virtual WindPark WindPark { get; set; }
-        public int LocationID { get; set; }
-        public Location Location { get; set; }
+        
         //Foriegn Key for Node
         public virtual List<Node> Nodes { get; set; }
-        public virtual Connection Connection { get; set; }
+
 
     }
 }

@@ -13,6 +13,8 @@ namespace ProjectCMC_Web.DAL
         public ProjectContext(): base("ProjectContext")
         {
             Database.SetInitializer<ProjectContext>(null);
+            Database.SetInitializer<ProjectContext>(new DropCreateDatabaseIfModelChanges<ProjectContext>());
+            Database.SetInitializer<ProjectContext>(new CreateDatabaseIfNotExists<ProjectContext>()); 
         }
         public DbSet<Connection> Connection { get; set; }
         public DbSet<Location> Location { get; set; }

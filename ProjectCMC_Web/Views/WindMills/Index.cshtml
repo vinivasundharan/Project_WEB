@@ -12,9 +12,6 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Location.Latitude)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.WindPark.WindParkName)
         </th>
         <th>
@@ -35,14 +32,17 @@
         <th>
             @Html.DisplayNameFor(model => model.ManufacturerName)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Latitude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Longtitude)
+        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Location.Latitude)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.WindPark.WindParkName)
         </td>
@@ -63,6 +63,12 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ManufacturerName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Latitude)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Longtitude)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.WindMillID }) |

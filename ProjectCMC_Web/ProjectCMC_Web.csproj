@@ -52,6 +52,14 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Excel, Version=2.1.2.3, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.2.1.2.3\lib\net45\Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -85,6 +93,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="RDotNet, Version=1.5.5.0, Culture=neutral, PublicKeyToken=5f72f6e23c6920d4, processorArchitecture=MSIL">
       <HintPath>..\packages\R.NET.1.5.5\lib\net40\RDotNet.dll</HintPath>
       <Private>True</Private>
@@ -168,12 +181,15 @@
     <Compile Include="Controllers\ConnectionsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocationsController.cs" />
+    <Compile Include="Controllers\NodesController.cs" />
+    <Compile Include="Controllers\TrendsController.cs" />
     <Compile Include="Controllers\WindMillsController.cs" />
     <Compile Include="Controllers\WindParksController.cs" />
     <Compile Include="DAL\ProjectContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Connection.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Node.cs" />
@@ -225,11 +241,6 @@
     <Content Include="Views\WindParks\Details.cshtml" />
     <Content Include="Views\WindParks\Edit.cshtml" />
     <Content Include="Views\WindParks\Index.cshtml" />
-    <Content Include="Views\WindMills\Create.cshtml" />
-    <Content Include="Views\WindMills\Delete.cshtml" />
-    <Content Include="Views\WindMills\Details.cshtml" />
-    <Content Include="Views\WindMills\Edit.cshtml" />
-    <Content Include="Views\WindMills\Index.cshtml" />
     <Content Include="Views\Locations\Create.cshtml" />
     <Content Include="Views\Locations\Delete.cshtml" />
     <Content Include="Views\Locations\Details.cshtml" />
@@ -240,6 +251,22 @@
     <Content Include="Views\Connections\Details.cshtml" />
     <Content Include="Views\Connections\Edit.cshtml" />
     <Content Include="Views\Connections\Index.cshtml" />
+    <Content Include="Views\WindMills\Create.cshtml" />
+    <Content Include="Views\WindMills\Delete.cshtml" />
+    <Content Include="Views\WindMills\Details.cshtml" />
+    <Content Include="Views\WindMills\Edit.cshtml" />
+    <Content Include="Views\WindMills\Index.cshtml" />
+    <Content Include="Views\Nodes\Create.cshtml" />
+    <Content Include="Views\Nodes\Delete.cshtml" />
+    <Content Include="Views\Nodes\Details.cshtml" />
+    <Content Include="Views\Nodes\Edit.cshtml" />
+    <Content Include="Views\Nodes\Index.cshtml" />
+    <Content Include="Views\Trends\Create.cshtml" />
+    <Content Include="Views\Trends\Delete.cshtml" />
+    <Content Include="Views\Trends\Details.cshtml" />
+    <Content Include="Views\Trends\Edit.cshtml" />
+    <Content Include="Views\Trends\Index.cshtml" />
+    <Content Include="Views\Trends\Upload.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
