@@ -7,5 +7,6 @@ namespace ProjectCMC_Web.Models
 {
     public class Trend
     {
+        //test
     }
 }
