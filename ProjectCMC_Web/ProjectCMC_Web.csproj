@@ -190,6 +190,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CleansedTrend.cs" />
     <Compile Include="Models\Connection.cs" />
     <Compile Include="Models\Location.cs" />
@@ -249,11 +250,6 @@
     <Content Include="Views\Locations\Details.cshtml" />
     <Content Include="Views\Locations\Edit.cshtml" />
     <Content Include="Views\Locations\Index.cshtml" />
-    <Content Include="Views\Connections\Create.cshtml" />
-    <Content Include="Views\Connections\Delete.cshtml" />
-    <Content Include="Views\Connections\Details.cshtml" />
-    <Content Include="Views\Connections\Edit.cshtml" />
-    <Content Include="Views\Connections\Index.cshtml" />
     <Content Include="Views\WindMills\Create.cshtml" />
     <Content Include="Views\WindMills\Delete.cshtml" />
     <Content Include="Views\WindMills\Details.cshtml" />
@@ -278,6 +274,11 @@
     <Content Include="Views\CleansedTrends\Details.cshtml" />
     <Content Include="Views\CleansedTrends\Edit.cshtml" />
     <Content Include="Views\CleansedTrends\Index.cshtml" />
+    <Content Include="Views\Connections\Create.cshtml" />
+    <Content Include="Views\Connections\Delete.cshtml" />
+    <Content Include="Views\Connections\Details.cshtml" />
+    <Content Include="Views\Connections\Edit.cshtml" />
+    <Content Include="Views\Connections\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

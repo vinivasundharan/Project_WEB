@@ -28,6 +28,6 @@ namespace ProjectCMC_Web.Models
         //Foriegn Key for Node
         public virtual List<Node> Nodes { get; set; }
 
-
+        public virtual List<Connection> Connections { get; set; }
     }
 }
