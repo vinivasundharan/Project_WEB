@@ -101,7 +101,7 @@ namespace ProjectCMC_Web.Controllers
                         Trend t = new Trend { NodeID=1,
                         ReadingTime=Convert.ToDateTime(dr[0]),
                         F1Amp=Convert.ToDouble(dr[1]),
-                            F1Phase  = Convert.ToInt32(dr[2]),
+                            F1Phase  = Convert.ToInt32(dr[2]), //hjgjh
                         F1HA = Convert.ToDouble(dr[3]),
                         F1HW = Convert.ToDouble(dr[4]),
                         F1Status= Convert.ToInt32(dr[5]),
