@@ -10,6 +10,7 @@ namespace ProjectCMC_Web.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            ContextKey = "ProjectCMC_Web.DAL.ProjectContext";
         }
 
         protected override void Seed(ProjectCMC_Web.DAL.ProjectContext context)
