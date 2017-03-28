@@ -17,6 +17,9 @@ namespace ProjectCMC_Web.Models
         public string LastIP { get; set; }
         [Display(Name = "Connection Status")]
         public Status ConnectionStatus { get; set; }
+        public int WindMillID { get; set; }
+        public virtual WindMill WindMill { get; set; }
+
 
     }
 }

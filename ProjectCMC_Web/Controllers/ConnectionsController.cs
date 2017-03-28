@@ -18,7 +18,8 @@ namespace ProjectCMC_Web.Controllers
         // GET: Connections
         public ActionResult Index()
         {
-            return View(db.Connection.ToList());
+            var connection = db.Connection.Include(c => c.WindMill);
+            return View(connection.ToList());
         }
 
         // GET: Connections/Details/5
@@ -39,6 +40,7 @@ namespace ProjectCMC_Web.Controllers
         // GET: Connections/Create
         public ActionResult Create()
         {
+            ViewBag.WindMillID = new SelectList(db.WindMill, "WindMillID", "WindMillName");
             return View();
         }
 
@@ -47,7 +49,7 @@ namespace ProjectCMC_Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ConnectionID,StartTime,EndTime,LastIP,ConnectionStatus")] Connection connection)
+        public ActionResult Create([Bind(Include = "ConnectionID,StartTime,EndTime,LastIP,ConnectionStatus,WindMillID")] Connection connection)
         {
             if (ModelState.IsValid)
             {
@@ -56,6 +58,7 @@ namespace ProjectCMC_Web.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.WindMillID = new SelectList(db.WindMill, "WindMillID", "WindMillName", connection.WindMillID);
             return View(connection);
         }
 
@@ -71,6 +74,7 @@ namespace ProjectCMC_Web.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.WindMillID = new SelectList(db.WindMill, "WindMillID", "WindMillName", connection.WindMillID);
             return View(connection);
         }
 
@@ -79,7 +83,7 @@ namespace ProjectCMC_Web.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ConnectionID,StartTime,EndTime,LastIP,ConnectionStatus")] Connection connection)
+        public ActionResult Edit([Bind(Include = "ConnectionID,StartTime,EndTime,LastIP,ConnectionStatus,WindMillID")] Connection connection)
         {
             if (ModelState.IsValid)
             {
@@ -87,6 +91,7 @@ namespace ProjectCMC_Web.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.WindMillID = new SelectList(db.WindMill, "WindMillID", "WindMillName", connection.WindMillID);
             return View(connection);
         }
 

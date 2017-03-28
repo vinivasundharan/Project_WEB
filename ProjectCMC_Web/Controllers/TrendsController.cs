@@ -53,14 +53,14 @@ namespace ProjectCMC_Web.Controllers
             ViewBag.NodeID = new SelectList(db.Node, "NodeID", "NodeName");
             return View();
         }
-        public ActionResult Upload()
+        public ActionResult Upload(int id)
         {
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Upload(HttpPostedFileBase upload)
+        public ActionResult Upload(HttpPostedFileBase upload, int id)
         {
             if (ModelState.IsValid)
             {

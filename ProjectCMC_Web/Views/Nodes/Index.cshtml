@@ -59,6 +59,7 @@
             @Html.DisplayFor(modelItem => item.ModifiedBy)
         </td>
         <td>
+            @Html.ActionLink("Add trend", "Upload","Trends", new { id = item.NodeID },null) |
             @Html.ActionLink("Edit", "Edit", new { id=item.NodeID }) |
             @Html.ActionLink("Details", "Details", new { id=item.NodeID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.NodeID })
