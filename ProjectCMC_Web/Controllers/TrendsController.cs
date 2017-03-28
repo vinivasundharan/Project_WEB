@@ -100,7 +100,7 @@ namespace ProjectCMC_Web.Controllers
                     {
                         Trend t = new Trend
                         {
-                            NodeID = 1,
+                            NodeID = 1, // test
                             ReadingTime = Convert.ToDateTime(dr[3]),
                             F1Amp = Convert.ToDouble(dr[4]),
                             F1Phase = Convert.ToInt32(dr[5]),
