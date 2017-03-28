@@ -13,7 +13,7 @@ namespace ProjectCMC_Web.DAL
         public ProjectContext(): base("ProjectContext")
         {
             Database.SetInitializer<ProjectContext>(null);
-            Database.SetInitializer<ProjectContext>(new DropCreateDatabaseIfModelChanges<ProjectContext>());
+         //   Database.SetInitializer<ProjectContext>(new DropCreateDatabaseIfModelChanges<ProjectContext>());
             Database.SetInitializer<ProjectContext>(new CreateDatabaseIfNotExists<ProjectContext>()); 
         }
         public DbSet<Connection> Connection { get; set; }
@@ -22,6 +22,13 @@ namespace ProjectCMC_Web.DAL
         public DbSet<Trend> Trend { get; set; }
         public DbSet<WindMill> WindMill { get; set; }
         public DbSet<WindPark> WindPark { get; set; }
-       
+        public DbSet<CleansedTrend> CleansedTrend { get; set; }
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //   // modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+        //    modelBuilder.Conventions.Remove<OneToManyCascadeDeleteConvention>();
+            
+
+        //}
     }
 }

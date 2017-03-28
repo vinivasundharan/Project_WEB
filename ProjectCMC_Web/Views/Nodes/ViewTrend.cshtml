@@ -1,0 +1,212 @@
+﻿@model List<ProjectCMC_Web.Models.Trend>
+@{
+    ViewBag.Title = "ViewTrend";
+}
+
+<h2>Trend</h2>
+
+<table class="table">
+    <tr>
+
+        <th>
+Reading Time
+        </th>
+        <th>
+            F1Amp
+        </th>
+        <th>
+           F2Amp
+        </th>
+        <th>
+           F3Amp
+        </th>
+        <th>
+         F4Amp
+        </th>
+        <th>
+          F5Amp
+        </th>
+        <th>
+         F1Phase
+        </th>
+        <th>
+            F2Phase
+        </th>
+        <th>
+           F3Phase
+        </th>
+        <th>
+           F4Phase
+        </th>
+        <th>
+          F5Phase
+        </th>
+        <th>
+           F1HA
+        </th>
+        <th>
+          F2HA
+        </th>
+        <th>
+          F3HA
+        </th>
+        <th>
+           F4HA
+        </th>
+        <th>
+           F5HA
+        </th>
+        <th>
+           F1HW
+        </th>
+        <th>
+           F2HW
+        </th>
+        <th>
+           F3HW
+        </th>
+        <th>
+           F4HW
+        </th>
+        <th>
+          F5HW
+        </th>
+        <th>
+           F1Status
+        </th>
+        <th>
+          F2Status
+        </th>
+        <th>
+          F3Status
+        </th>
+        <th>
+           F4Status
+        </th>
+        <th>
+         F5Status
+        </th>
+        <th>
+          Speed
+        </th>
+        <th>
+       Process
+        </th>
+        <th>
+        Digital
+        </th>
+        <th>
+          StorageReason
+        </th>
+        <th>
+          BOV
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+       
+            <td>
+                @Html.DisplayFor(modelItem => item.ReadingTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.F1Amp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.F2Amp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.F3Amp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.F4Amp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.F5Amp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.F1Phase)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.F2Phase)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.F3Phase)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.F4Phase)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.F5Phase)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.F1HA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.F2HA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.F3HA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.F4HA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.F5HA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.F1HW)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.F2HW)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.F3HW)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.F4HW)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.F5HW)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.F1Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.F2Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.F3Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.F4Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.F5Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Speed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Process)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Digital)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StorageReason)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BOV)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit","Trends", new { id = item.TrendID },null) |
+                @Html.ActionLink("Details", "Details","Trends", new { id = item.TrendID },null) |
+                @Html.ActionLink("Delete", "Delete","Trends", new { id = item.TrendID },null)
+            </td>
+        </tr>
+    }
+
+</table>

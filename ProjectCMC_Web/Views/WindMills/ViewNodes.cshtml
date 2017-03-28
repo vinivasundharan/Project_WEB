@@ -1,0 +1,63 @@
+﻿@model List<ProjectCMC_Web.Models.Node>
+@{
+    ViewBag.Title = "ViewNodes";
+}
+
+<h2>View Nodes</h2>
+<table class="table">
+    <tr>
+
+        <th>
+          Node Name
+        </th>
+        <th>
+          Node Description
+        </th>
+        <th>
+           Created On
+        </th>
+        <th>
+            Modified On
+        </th>
+        <th>
+            Created By
+        </th>
+        <th>
+          Modified By
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.NodeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NodeDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifiedOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifiedBy)
+            </td>
+            <td>
+                @Html.ActionLink("View trend", "ViewTrend","Nodes", new { id = item.NodeID },null) |
+                @Html.ActionLink("Edit", "Edit", "Nodes", new { id = item.NodeID },null) |
+                @Html.ActionLink("Details", "Details", "Nodes", new { id = item.NodeID },null) |
+                @Html.ActionLink("Delete", "Delete", "Nodes", new { id = item.NodeID },null)
+            </td>
+        </tr>
+    }
+
+</table>
+

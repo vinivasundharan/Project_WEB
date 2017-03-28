@@ -36,7 +36,11 @@ namespace ProjectCMC_Web.Controllers
             }
             return View(windMill);
         }
-
+        public ActionResult ViewNodes(int id)
+        {
+            var nodelist = db.Node.Where(x => x.WindMillID == id).ToList();
+            return View(nodelist);
+        }
         // GET: WindMills/Create
         public ActionResult Create()
         {

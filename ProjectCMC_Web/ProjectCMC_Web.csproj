@@ -178,6 +178,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CleansedTrendsController.cs" />
     <Compile Include="Controllers\ConnectionsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocationsController.cs" />
@@ -189,7 +190,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\CleansedTrend.cs" />
     <Compile Include="Models\Connection.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Node.cs" />
@@ -269,6 +270,14 @@
     <Content Include="Views\Trends\Edit.cshtml" />
     <Content Include="Views\Trends\Index.cshtml" />
     <Content Include="Views\Trends\Upload.cshtml" />
+    <Content Include="Views\WindParks\ViewWindMills.cshtml" />
+    <Content Include="Views\WindMills\ViewNodes.cshtml" />
+    <Content Include="Views\Nodes\ViewTrend.cshtml" />
+    <Content Include="Views\CleansedTrends\Create.cshtml" />
+    <Content Include="Views\CleansedTrends\Delete.cshtml" />
+    <Content Include="Views\CleansedTrends\Details.cshtml" />
+    <Content Include="Views\CleansedTrends\Edit.cshtml" />
+    <Content Include="Views\CleansedTrends\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

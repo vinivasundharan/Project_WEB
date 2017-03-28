@@ -66,6 +66,12 @@ namespace ProjectCMC_Web.Controllers
             return View(node);
         }
 
+        public ActionResult ViewTrend(int id)
+        {
+            var trendlist = db.Trend.Where(x => x.NodeID == id).ToList();
+            return View(trendlist);
+        }
+
         // GET: Nodes/Edit/5
         public ActionResult Edit(int? id)
         {

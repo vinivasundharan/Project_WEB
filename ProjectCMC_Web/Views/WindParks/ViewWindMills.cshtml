@@ -1,0 +1,75 @@
+﻿@model List<ProjectCMC_Web.Models.WindMill>
+@{
+    ViewBag.Title = "ViewWindMills";
+}
+
+<h2>Wind Mills</h2>
+
+<table class="table">
+    <tr>
+        <th>
+           Wind mill name
+        </th>
+
+        <th>
+           Created On
+        </th>
+        <th>
+            Modified On
+        </th>
+        <th>
+          Created By
+        </th>
+        <th>
+          Modified By
+        </th>
+        <th>
+           Manufacturer Name
+        </th>
+        <th>
+           Latitude
+        </th>
+        <th>
+           Longtitude
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.WindMillName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifiedOn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifiedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ManufacturerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Latitude)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Longtitude)
+            </td>
+            <td>
+                @Html.ActionLink("View nodes", "ViewNodes", "WindMills", new { id = item.WindMillID },null) |
+                @Html.ActionLink("Edit", "Edit","WindMills", new { id = item.WindMillID },null) |
+                @Html.ActionLink("Details", "Details", "WindMills", new { id = item.WindMillID },null) |
+                @Html.ActionLink("Delete", "Delete", "WindMills", new { id = item.WindMillID },null)
+            </td>
+        </tr>
+    }
+
+</table>
+
